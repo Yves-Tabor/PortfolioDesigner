@@ -72,7 +72,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         <div className="flex gap-3 pt-4 border-t border-gray-100">
           <a
             href={project.demoUrl || '#'}
-            onClick={(e) => e.preventDefault()}
             className="btn btn-primary text-xs"
           >
             <span>Live Demonstration</span>
@@ -80,7 +79,6 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           </a>
           <a
             href={project.githubUrl || '#'}
-            onClick={(e) => e.preventDefault()}
             className="btn btn-dark text-xs"
           >
             <Code size={14} />

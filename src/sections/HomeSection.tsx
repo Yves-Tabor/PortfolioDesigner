@@ -18,13 +18,13 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
     <section id="home" className="stack-section" data-id="home">
       <div className="inner reveal in-view">
         <SectionHeader eyebrow={eyebrow} headline={headline} />
-        
+
         <p className="text-gray-600 text-[14px] leading-[22.75px] mb-[15px] mt-0">
-          I am a digital product designer and full-stack technologist with 10+ years dedicated to turning complex data landscapes into clear, intuitive human experiences.
+          I am a UI/UX designer and junior developer with 2+ years of experience exploring how thoughtful design and code can solve real-world problems.
         </p>
-        
+
         <p className="text-gray-600 text-[14px] leading-[22.75px] m-0">
-          Currently spearheading next-generation software interfaces at Synthetix Cloud, establishing design tokens, high-velocity frontend architecture, and AI-accelerated workflows.
+          I enjoy designing interfaces in Figma and turning them into functional web applications using modern frontend and backend technologies.
         </p>
 
         <div className="stat-grid">
