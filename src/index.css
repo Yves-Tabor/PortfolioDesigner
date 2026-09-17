@@ -45,6 +45,10 @@ body {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
+.serif, .font-serif, .secondary {
+  font-family: 'Lora', Georgia, serif;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

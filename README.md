@@ -16,7 +16,8 @@ A minimal, high-conviction personal portfolio website designed like a slide deck
   - Border Accents: Emerald 200 (`#A7F3D0`)
 
 ### Typography
-- **Primary Font**: `Inter` (geometric sans-serif for headlines & editorial body text)
+- **Primary Font**: `Inter` (clean geometric sans-serif for UI layout & body copy)
+- **Secondary Font**: `Lora` (editorial serif for subtitles, highlights, and secondary headings)
 - **Technical / Mono Font**: `JetBrains Mono` (for section indices, stat labels, PGP keys, and code tags)
 
 ---
