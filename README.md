@@ -31,9 +31,9 @@ A minimal, high-conviction personal portfolio website designed like a slide deck
 - **Scroll Reveal Animations**: Elements use CSS class `.reveal` triggered by an `IntersectionObserver` to animate into view with opacity and subtle upward translation (`translateY(24px)`).
 
 ### 2. Routing & Navigations
-- **Single-Page Smooth Scrolling**: Programmatic navigation via `scrollIntoView({ behavior: 'smooth' })` triggered across:
+- **Single-Page Smooth Scrolling**: Programmatic bidirectional navigation using calculated viewport Y offsets (`idx * window.innerHeight`) on desktop sticky sections and `scrollIntoView()` on mobile across:
   - Left Sidebar CTA ("Get in touch")
-  - Right Tracker dynamic dots (`01` - `04`)
+  - Right Tracker dynamic dots (`01` - `04`) allowing forward and backward jumps
   - Mobile bottom navigation bar
   - Contact section ("Return to top" button)
 - **IntersectionObserver Active Tracking**: Viewport center detection (`rootMargin: '-45% 0px -45% 0px'`) automatically updates the active section index (`01` to `04`) and progress fill bar (`25%` to `100%`).

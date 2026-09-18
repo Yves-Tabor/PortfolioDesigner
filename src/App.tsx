@@ -23,8 +23,18 @@ export function App() {
 
   const handleNavigate = (sectionId: string) => {
     const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (!el) return;
+
+    const idx = sectionsData.findIndex((sec) => sec.id === sectionId);
+    const isDesktop = window.innerWidth >= 1024;
+
+    if (isDesktop && idx !== -1) {
+      window.scrollTo({
+        top: idx * window.innerHeight,
+        behavior: 'smooth',
+      });
+    } else {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
