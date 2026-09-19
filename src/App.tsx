@@ -26,8 +26,11 @@ export function App() {
     if (!el) return;
 
     const idx = sectionsData.findIndex((sec) => sec.id === sectionId);
-    const isDesktop = window.innerWidth >= 1024;
+    if (idx !== -1) {
+      setActiveIndex(idx);
+    }
 
+    const isDesktop = window.innerWidth >= 1024;
     if (isDesktop && idx !== -1) {
       window.scrollTo({
         top: idx * window.innerHeight,
@@ -43,6 +46,18 @@ export function App() {
       .map((sec) => document.getElementById(sec.id))
       .filter((el): el is HTMLElement => el !== null);
 
+    const handleScroll = () => {
+      const isDesktop = window.innerWidth >= 1024;
+      if (isDesktop) {
+        const vh = window.innerHeight;
+        const currentIdx = Math.min(
+          sectionsData.length - 1,
+          Math.max(0, Math.round(window.scrollY / vh))
+        );
+        setActiveIndex(currentIdx);
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -56,15 +71,17 @@ export function App() {
         });
       },
       {
-        rootMargin: '-45% 0px -45% 0px',
+        rootMargin: '-40% 0px -40% 0px',
         threshold: 0,
       }
     );
 
     sectionElements.forEach((el) => observer.observe(el));
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
